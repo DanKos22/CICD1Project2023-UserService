@@ -45,10 +45,13 @@ public class PersonalDetailsUnitTest {
         String email;
 
         public PersonDetails(String name, String email) {
+            this.name = name;
+            this.email = email;
         }
 
         public PersonDetails() {
-
+            this.name = "";
+            this.email = "";
         }
 
         public void setName(String name) {
