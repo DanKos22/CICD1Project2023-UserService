@@ -28,10 +28,33 @@ public class UserControllerTest {
 
     //RegisterClientTest class implements the RegisterClient interface.
     //This class provides a simplified version of the RegisterClient interface for testing purposes.
-    private static class RegisterClientTest implements RegisterClient {
+    private class RegisterClientTest {
         //Test the anyDetails method.
         public String anyDetails(PersonDetails personDetails) {
             return "confirmation";
         }
     }
+
+    public class UserController {
+        RegisterClientTest registerClientTest;
+
+        public UserController(RegisterClientTest registerClientTest) {
+            this.registerClientTest = registerClientTest;
+        }
+
+        public String confirmAndRegister(PersonDetails personDetails) {
+            return "confirmation";
+        }
+    }
+
+    public class PersonDetails {
+        String name;
+        String email;
+
+        public PersonDetails(String name, String email) {
+            this.name = name;
+            this.email = email;
+        }
+    }
+
 }
