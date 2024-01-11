@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 @FeignClient(name = "affirm", url = "http://notification-service:8082")
 public interface NotifyClient {
 
-    @PostMapping("/subscribe")
+    @PostMapping("/join")
     String anyDetails(@RequestBody PersonDetails personDetails);
 }
